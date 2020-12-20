@@ -1,15 +1,7 @@
 yolov3算法模型P-R曲线绘制教程(python2，python3)
 
-我有一根魔法棒 2019-12-05 10:20:42  745  收藏 4
-分类专栏： YOLO 文章标签： yolov3 P-R曲线
-版权
 方法一：python2环境下
-第一步：寻找在darknet/scripts文件中的reval_voc.py和voc_eval.py文件，或者在这里下载：
-reval_voc.py：
-https://download.csdn.net/download/qq_42881737/12014098
-voc_eval.py：
-https://download.csdn.net/download/qq_42881737/12014100
-
+第一步：寻找在darknet/scripts文件中的reval_voc.py和voc_eval.py文件
 将其考到darknet目录下，
 第二步：执行类似如下语句：
 python reval_voc.py –voc_dir {VOCdevkit文件的路径} –year {voc样本格式年份如2007,2012} –image_set {在VOCdevki/voc2007/ImageSets/Main/路径下的测试图片路径的txt文件中，只需要文件名不需要后缀txt} –classes {.names文件存放的路径} {输出的文件存入的文件夹名}
@@ -19,21 +11,16 @@ python reval_voc.py –voc_dir {VOCdevkit文件的路径} –year {voc样本格�
 
 上述语句执行后会在VOCdevki/annotations_cache/路径下生成一个.pkl文件，若要重复执行上述语句需要将该文件删除，不然会报错
 同时也会在执行语句中填写的输出文件夹里(我的是results)生成{检测类名}_pr.kpl的文件
-第三步，同时需要下来一个draw_pr.py的文件放入该文件里，下载路径如下：
-https://download.csdn.net/download/qq_42881737/12014095
+第三步，同时需要下来一个draw_pr.py的文件放入该文件里
 
 下载好了，打开该文件，看到代码第四行，将.pkl文件名字替换成你自己的，替换好了保存运行，运行成功之后即可出现P-R图形
 
 方法二：python3环境
 与上述方法一过程步骤一致，不过运行的文件不同，方法一第一步的两个文件替换成：
 reval_voc_py3.py
-https://download.csdn.net/download/qq_42881737/12014091
-
 voc_eval_py3.py
-https://download.csdn.net/download/qq_42881737/12014094
 
 第三步的文件替换成：
 draw_pr_py3.py
-https://download.csdn.net/download/qq_42881737/12014088
 
 注意不能两种方法混用，因为python2，python3生成的文件是不一样的
